@@ -65,9 +65,9 @@ function nextQuestion() {
     :question-number="currentQuestion"
     :set-time="currentSetStartTime"
     :question="currentQuestionText"
-    :person="currentPlayerObject.name"
-    :colour-a="currentPlayerObject.colourA"
-    :colour-b="currentPlayerObject.colourB"
+    :person="currentPlayerObject?.name ?? ''"
+    :colour-a="currentPlayerObject?.colourA ?? ''"
+    :colour-b="currentPlayerObject?.colourB ?? ''"
     @next-question="nextQuestion"
   />
   <div v-else>
