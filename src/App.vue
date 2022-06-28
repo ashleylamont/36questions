@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import CreatePlayer from './components/CreatePlayer.vue';
-import questions from './testQuestions';
+import testQuestions from './testQuestions';
+import realQuestions from './questions';
 import QuestionCard from './components/Question.vue';
 import Timer from './components/Timer.vue';
+
+let questions: string[][];
+const queryString = window.location.search.substring(1);
+if (queryString === 'test') {
+  questions = testQuestions;
+} else {
+  questions = realQuestions;
+}
 
 interface Player {
   name: string;

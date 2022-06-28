@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-screen h-screen flex items-center justify-center flex-col"
+    class="w-screen h-screen flex items-center justify-center flex-col pa-4 md:px-16 lg:px-28"
     :style="{ backgroundImage: gradient}"
   >
     <div class="fixed top-0 w-screen  flex items-center justify-center flex-col">
@@ -11,7 +11,7 @@
         {{ setTimeRemaining }}
       </div>
     </div>
-    <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+    <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
       {{ question }}
     </div>
     <div class="font-bold text-md">
