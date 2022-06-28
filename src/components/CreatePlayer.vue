@@ -3,13 +3,19 @@
     class="w-screen h-screen flex items-center justify-center flex-col"
     :style="{ backgroundImage: gradient}"
   >
-    <input
-      v-model="playerName"
-      class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+    <form @submit.prevent.stop="createPlayer">
+      <input
+        v-model="playerName"
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl
               border-black border-solid border-b-2 bg-transparent
               text-black placeholder:text-gray-500"
-      placeholder="Player Name"
-    >
+        placeholder="Player Name"
+      >
+      <input
+        type="submit"
+        hidden
+      >
+    </form>
     <button
       :disabled="playerName.trim().length === 0"
       :style="{
