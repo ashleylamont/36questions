@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import CreatePlayer from './components/CreatePlayer.vue';
 import questions from './testQuestions';
 import QuestionCard from './components/Question.vue';
+import Timer from './components/Timer.vue';
 
 interface Player {
   name: string;
@@ -70,9 +71,7 @@ function nextQuestion() {
     :colour-b="currentPlayerObject?.colourB ?? ''"
     @next-question="nextQuestion"
   />
-  <div v-else>
-    Done
-  </div>
+  <timer v-else />
 </template>
 
 <style>
